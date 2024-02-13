@@ -12,4 +12,6 @@ async fn main() -> Result<()> {
     let mnemonic = "gas monster ski craft below illegal discover limit dog bundle bus artefact";
     let ganache = Ganache::new().mnemonic(mnemonic).spawn();
     println!("Endpoint: {}", ganache.endpoint());
+
+    let wallet: LocalWallet = ganache.keys()[0].clone().into();
 }
