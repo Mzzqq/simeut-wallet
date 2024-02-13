@@ -23,4 +23,5 @@ async fn main() -> Result<()> {
 
     let provider = Provider::try_from(ganache.endpoint())?.interval(Duration::from_millis(10));
     let first_balance = provider.get_balance(first_address, None).await?;
+    println!("wallet first address balance: {}", first_balance);
 }
