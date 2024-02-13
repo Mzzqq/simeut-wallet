@@ -1,4 +1,6 @@
 use std::time::Duration;
+use std::env;
+use dotenv::dotenv;
 use eyre::{ContextCompat, Result};
 use hex::ToHex;
 
@@ -10,7 +12,8 @@ use ethers::abi::AbiEncode;
 
 #[tokio::main]
 async fn main() -> Result<()> {
-    let mnemonic = "gas monster ski craft below illegal discover limit dog bundle bus artefact";
+    dotenv().ok();
+    let mnemonic = std::env::var("MNEMONIC_KEY").unwrap();
     let ganache = Ganache::new().mnemonic(mnemonic).spawn();
     println!("Endpoint: {}", ganache.endpoint());
 
@@ -19,4 +22,5 @@ async fn main() -> Result<()> {
     println!("wallet first address {}", first_address.encode_hex());
 
     let provider = Provider::try_from(ganache.endpoint())?.interval(Duration::from_millis(10));
+    let first_balance = provider.get_balance(first_address, None).await?;
 }
