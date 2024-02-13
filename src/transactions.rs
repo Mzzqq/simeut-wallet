@@ -17,4 +17,6 @@ async fn main() -> Result<()> {
     let wallet: LocalWallet = ganache.keys()[0].clone().into();
     let first_address = wallet.address();
     println!("wallet first address {}", first_address.encode_hex());
+
+    let provider = Provider::try_from(ganache.endpoint())?.interval(Duration::from_millis(10));
 }
