@@ -9,5 +9,5 @@ use ethers::{
 
 #[tokio::main]
 async fn main() -> Result<()> {
-
+    let mnemonic = "gas monster ski craft below illegal discover limit dog bundle bus artefact";
 }
