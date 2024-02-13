@@ -6,3 +6,8 @@ use ethers::{
     prelude::{Address, LocalWallet, Middleware, Provider, Signer, TransactionRequest, U256},
     utils::Ganache,
 };
+
+#[tokio::main]
+async fn main() -> Result<()> {
+
+}
