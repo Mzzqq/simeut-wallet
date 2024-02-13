@@ -6,3 +6,4 @@ use ethers::{
 };
 
 use eyre::{ContextCompat, Result};
+use hex::ToHex;
