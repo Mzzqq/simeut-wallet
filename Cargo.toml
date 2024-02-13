@@ -8,6 +8,7 @@ author = "Mzzqq"
 [dependencies]
 ethers = "2.0"
 clap = {version="3.1.9", features = ["derive"]}
+dotenv = "0.15.0"
 eyre = "*"
 hex = "*"
 tokio = { version = "1.17.0", features = ["full"] }
