@@ -9,6 +9,7 @@ use ethers::{
     utils::Ganache,
 };
 use ethers::abi::AbiEncode;
+use ethers::abi::ParamType::Address;
 
 #[tokio::main]
 async fn main() -> Result<()> {
@@ -24,4 +25,7 @@ async fn main() -> Result<()> {
     let provider = Provider::try_from(ganache.endpoint())?.interval(Duration::from_millis(10));
     let first_balance = provider.get_balance(first_address, None).await?;
     println!("wallet first address balance: {}", first_balance);
+
+    let random_address = "0xaf206dCE72A0ef76643dfeDa34DB764E2126E646".parse::<Address>()?;
+    let address_hex = "";
 }
