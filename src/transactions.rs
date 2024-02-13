@@ -6,6 +6,7 @@ use ethers::{
     prelude::{Address, LocalWallet, Middleware, Provider, Signer, TransactionRequest, U256},
     utils::Ganache,
 };
+use ethers::abi::AbiEncode;
 
 #[tokio::main]
 async fn main() -> Result<()> {
@@ -14,4 +15,5 @@ async fn main() -> Result<()> {
     println!("Endpoint: {}", ganache.endpoint());
 
     let wallet: LocalWallet = ganache.keys()[0].clone().into();
+    let first_address = wallet.address();
 }
