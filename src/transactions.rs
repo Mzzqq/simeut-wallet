@@ -26,6 +26,6 @@ async fn main() -> Result<()> {
     let first_balance = provider.get_balance(first_address, None).await?;
     println!("wallet first address balance: {}", first_balance);
 
-    let random_address = "0xaf206dCE72A0ef76643dfeDa34DB764E2126E646".parse::<Address>()?;
     let address_hex = "0xaf206dCE72A0ef76643dfeDa34DB764E2126E646";
+    let random_address = address_hex.parse::<Address>()?;
 }
