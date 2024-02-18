@@ -41,4 +41,12 @@ async fn main() -> Result<()> {
         .await?
         .context("Missing receipt")?;
 
+    println!(
+        "TX mined in block {}",
+        receipt.block_number.context("cannot get block number")?
+    );
+    println!(
+        "Balance of {} {}",
+        address_hex, provider.get_balance(random_address, None).await?
+    );
 }
