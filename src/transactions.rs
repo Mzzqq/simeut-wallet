@@ -49,4 +49,5 @@ async fn main() -> Result<()> {
         "Balance of {} {}",
         address_hex, provider.get_balance(random_address, None).await?
     );
+    Ok(())
 }
