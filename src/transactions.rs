@@ -34,5 +34,11 @@ async fn main() -> Result<()> {
     );
 
     let tx = TransactionRequest::pay(random_address, U256::from(1000u64)).from(first_address);
+    let receipt =  provider
+        .send_transaction(tx, None)
+        .await?
+        .log_msg("Pending transfer")
+        .await?
+        .context("Missing receipt")?;
 
 }
