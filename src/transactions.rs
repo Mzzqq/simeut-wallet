@@ -28,7 +28,8 @@ async fn main() -> Result<()> {
 
     let address_hex = "0xaf206dCE72A0ef76643dfeDa34DB764E2126E646";
     let random_address = address_hex.parse::<Address>()?;
-    address_balance = provider.get_balance(random_address, None).await?;
+    let address_balance = provider.get_balance(random_address, None).await?;
+    println!("Balance for address {}: {}", address_hex, address_balance);
 
 
 }
