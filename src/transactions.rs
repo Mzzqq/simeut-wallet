@@ -1,15 +1,15 @@
 use std::time::Duration;
-use std::env;
+// use std::env;
 use dotenv::dotenv;
 use eyre::{ContextCompat, Result};
-use hex::ToHex;
+// use hex::ToHex;
 
 use ethers::{
-    prelude::{LocalWallet, Middleware, Provider, Signer, TransactionRequest, U256},
+    prelude::{Address, LocalWallet, Middleware, Provider, Signer, TransactionRequest, U256},
     utils::Ganache,
 };
 use ethers::abi::AbiEncode;
-use ethers::abi::ParamType::Address;
+// use ethers::abi::ParamType::Address;
 
 #[tokio::main]
 async fn main() -> Result<()> {
